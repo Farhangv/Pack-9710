@@ -183,4 +183,3 @@ INTO Sales
 FROM AdventureWorks2016.Sales.SalesOrderDetail
 ------------------
 TRUNCATE TABLE Sales
-
