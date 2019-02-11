@@ -152,3 +152,71 @@ CREATE TABLE SalesRow
 	LineTotal AS (OrderQty * UnitPrice * (1-UnitPriceDiscount))
 )
 GO
+ALTER TABLE Person
+ADD BirthDate DATE
+GO
+SELECT * FROM Person
+GO
+ALTER TABLE Person 
+ALTER COLUMN BirthDate DATETIME
+GO
+ALTER TABLE Person
+DROP COLUMN BirthDate
+GO
+SELECT * FROM Person
+GO
+ALTER TABLE Person
+ADD BirthDate DATE NOT NULL DEFAULT '1970-10-10'
+GO
+ALTER TABLE Person
+ADD CONSTRAINT UQ_NameFamily UNIQUE(Name,Family)
+GO
+ALTER TABLE Person
+DROP CONSTRAINT UQ_NameFamily
+GO
+USE [Session08]
+GO
+ALTER TABLE [Person] 
+DROP CONSTRAINT [UQ__Person__0834392198BF6B15]
+GO
+DROP TABLE SalesRow
+GO
+USE AdventureWorks2016
+GO
+CREATE VIEW VW_ProductSalesSummary
+AS
+SELECT p.Name, ISNULL(SUM(s.OrderQty), 0) 'TotalQty'
+FROM Production.Product p
+LEFT OUTER JOIN Sales.SalesOrderDetail s
+ON p.ProductID = s.ProductID
+GROUP BY p.Name
+--ORDER BY TotalQty DESC
+GO
+SELECT *
+FROM VW_ProductSalesSummary
+ORDER BY TotalQty DESC
+GO
+USE Session08
+GO
+CREATE TABLE Employee
+(
+	Id INT IDENTITY PRIMARY KEY,
+	Name NVARCHAR(50),
+	Family NVARCHAR(50),
+	Department NVARCHAR(20)
+)
+GO
+CREATE VIEW VW_Employee
+AS
+SELECT *
+FROM Employee
+GO
+SELECT *
+FROM VW_Employee
+GO
+ALTER VIEW VW_Employee
+WITH SCHEMABINDING, ENCRYPTION
+AS
+SELECT Name, Family, Department
+FROM dbo.Employee
+
