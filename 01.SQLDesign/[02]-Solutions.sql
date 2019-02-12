@@ -51,5 +51,4 @@ INNER JOIN Production.ProductInventory i
 ON p.ProductID = i.ProductID
 INNER JOIN order_data o
 ON o.ProductId = p.ProductID
-WHERE p.ProductID IN (766,776,780,517,514,524)
 GROUP BY p.ProductId, p.Name, o.Qty, DaysToManufacture
