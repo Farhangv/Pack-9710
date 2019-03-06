@@ -25,17 +25,18 @@ namespace IEnumerableDemo
         {
             this.questions = _questions;
         }
+        private int currentIndex = -1;
         private Question[] questions { get; set; }
-        public object Current { get { throw new NotImplementedException(); } }
+        public object Current { get { return questions[currentIndex]; } }
 
         public bool MoveNext()
         {
-            throw new NotImplementedException();
+            return (++currentIndex < questions.Length);
         }
 
         public void Reset()
         {
-            throw new NotImplementedException();
+            currentIndex = -1;
         }
     }
 }
