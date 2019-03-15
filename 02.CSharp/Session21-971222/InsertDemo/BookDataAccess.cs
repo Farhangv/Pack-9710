@@ -39,7 +39,7 @@ namespace InsertDemo
 
         public List<Book> GetAll()
         {
-            List<Book> books = new List<Book>();
+            List < Book > books = new List<Book>();
             using (this.connection = new SqlConnection(connectionString))
             {
                 using (SqlCommand command = new SqlCommand("SELECT * FROM Book", this.connection))
