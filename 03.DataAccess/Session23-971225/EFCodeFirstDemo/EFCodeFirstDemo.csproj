@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7679E984-529A-468F-8E2B-4B48F969012D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>EFCodeFirstDemo</RootNamespace>
+    <AssemblyName>EFCodeFirstDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Author.cs" />
+    <Compile Include="Book.cs" />
+    <Compile Include="BookShopDbContext.cs" />
+    <Compile Include="Category.cs" />
+    <Compile Include="Inventory.cs" />
+    <Compile Include="Migrations\201903160612127_init.cs" />
+    <Compile Include="Migrations\201903160612127_init.Designer.cs">
+      <DependentUpon>201903160612127_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903160726289_chanages-in-book.cs" />
+    <Compile Include="Migrations\201903160726289_chanages-in-book.Designer.cs">
+      <DependentUpon>201903160726289_chanages-in-book.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903160745571_book-title-max-length.cs" />
+    <Compile Include="Migrations\201903160745571_book-title-max-length.Designer.cs">
+      <DependentUpon>201903160745571_book-title-max-length.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903160754458_category-added.cs" />
+    <Compile Include="Migrations\201903160754458_category-added.Designer.cs">
+      <DependentUpon>201903160754458_category-added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903160811558_foreign-key-added.cs" />
+    <Compile Include="Migrations\201903160811558_foreign-key-added.Designer.cs">
+      <DependentUpon>201903160811558_foreign-key-added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903160826402_authors-added.cs" />
+    <Compile Include="Migrations\201903160826402_authors-added.Designer.cs">
+      <DependentUpon>201903160826402_authors-added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903160931375_inventory-added.cs" />
+    <Compile Include="Migrations\201903160931375_inventory-added.Designer.cs">
+      <DependentUpon>201903160931375_inventory-added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201903160612127_init.resx">
+      <DependentUpon>201903160612127_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903160726289_chanages-in-book.resx">
+      <DependentUpon>201903160726289_chanages-in-book.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903160745571_book-title-max-length.resx">
+      <DependentUpon>201903160745571_book-title-max-length.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903160754458_category-added.resx">
+      <DependentUpon>201903160754458_category-added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903160811558_foreign-key-added.resx">
+      <DependentUpon>201903160811558_foreign-key-added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903160826402_authors-added.resx">
+      <DependentUpon>201903160826402_authors-added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903160931375_inventory-added.resx">
+      <DependentUpon>201903160931375_inventory-added.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
