@@ -1,0 +1,25 @@
+﻿body{
+    direction:rtl;
+    text-align:justify;
+    margin:0;
+}
+div {
+    font-size: 20px;
+    border: 3px solid #b6ff00;
+    /*background-color: #3376ff;*/
+    /*background-color: rgb(153,203,252);*/
+    /*background-color: rgba(10,203,252,0.1);*/
+    background: linear-gradient(135deg, rgba(174,188,191,1) 0%,rgba(110,119,116,1) 50%,rgba(10,14,10,1) 51%,rgba(10,8,9,1) 100%);
+    /*padding:20px;*/
+    /*padding:50px 20px;*/
+    padding: 50px 100px 20px 30px;
+    margin: 20px;
+    width: 50%;
+}
+.important{
+    font-weight: bold;
+    /*width: 150px;*/
+}
+#third{
+    color:purple;
+}

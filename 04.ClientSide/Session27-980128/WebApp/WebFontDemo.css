@@ -1,0 +1,13 @@
+﻿@import url(/fonts/vazir.css);
+body {
+    direction: rtl;
+    text-align: justify;
+    font-family: Vazir;
+    font-weight: 900;
+}
+
+div {
+    border: 3px solid #ff6a00;
+    padding: 15px;
+    margin: 15px;
+}
