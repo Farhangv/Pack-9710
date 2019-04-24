@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/bootstrap-rtl.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme-rtl.css" rel="stylesheet" />
+    <link href="Content/Styles.css" rel="stylesheet" />
+    <style>
+        #main-content {
+            margin-top: 80px;
+        }
+        header{
+            margin-top:15px;
+        }
+    </style>
+    <script>
+        console.log('from head tag');
+    </script>
+</head>
+<body>
+    <header class="container-fluid">
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">کهکشان</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-home"></span>
+                        </a>
+                    </li>
+                    <li><a href="#">محصولات</a></li>
+                    <li class="active"><a href="/Register.html" target="_blank">ثبت نام دوره</a></li>
+                    <li><a href="#">درباره ما</a></li>
+                    <li><a href="#">درباره ما</a></li>
+                    <li><a href="#">تماس با ما</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="#">جان دو</a></li>
+                    <li>
+                        <a href="#" title="خروج">
+                            <span class="glyphicon glyphicon-log-out"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container" id="main-content">
+        <div class="row">
+            <form action="RegisterAction.aspx?type=newuser" method="post" enctype="multipart/form-data">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label for="name" class="control-label col-sm-2">نام</label>
+                        <div class="col-sm-10">
+                            <input type="text" id="name"
+                                   name="name" placeholder="نام"
+                                   class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="family" class="control-label col-sm-2">نام خانوادگی</label>
+                        <div class="col-sm-10">
+                            <input type="text" id="family"
+                                   name="family" placeholder="نام خانوادگی"
+                                   class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="age" class="control-label col-sm-2">سن</label>
+                        <div class="col-sm-10">
+                            <input type="number" id="age"
+                                   name="age" placeholder="سن"
+                                   class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="control-label col-sm-2">ایمیل</label>
+                        <div class="col-sm-10">
+                            <input type="email" id="email"
+                                   name="email" placeholder="ایمیل"
+                                   class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="control-label col-sm-2">کلمه عبور</label>
+                        <div class="col-sm-10">
+                            <input type="password" id="password"
+                                   name="password" placeholder="کلمه عبور"
+                                   class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">جنسیت</label>
+                        <div class="col-sm-10">
+                            <label for="gender_male">
+                                مرد
+                            </label>
+                            <input type="radio" id="gender_male"
+                                   name="gender" value="male" />
+
+                            <label>
+                                زن
+                                <input type="radio" id="gender_female"
+                                       name="gender" value="female" />
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">دوره های قبلی</label>
+                        <div class="col-sm-10">
+                            <label for="course_csharp">
+                                سی شارپ
+                            </label>
+                            <input type="checkbox" id="course_csharp"
+                                   name="course" value="csharp" />
+                            <br />
+                            <label for="course_sqlserver">
+                                SQL Server
+                            </label>
+                            <input type="checkbox" id="course_sqlserver"
+                                   name="course" value="sqlserver" />
+                            <br />
+                            <label for="course_python">
+                                Python
+                            </label>
+                            <input type="checkbox" id="course_python"
+                                   name="course" value="python" />
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="photo" class="control-label col-sm-2">عکس</label>
+                        <div class="col-sm-10">
+                            <input type="file" id="photo"
+                                   name="photo"
+                                   class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="degree" class="control-label col-sm-2">مدرک تحصیلی</label>
+                        <div class="col-sm-10">
+                            <select id="degree" name="degree" class="form-control">
+                                <option value="highschool">دیپلم متوسطه</option>
+                                <option value="bachelor">کارشناسی</option>
+                                <option value="master">کارشناسی ارشد</option>
+                                <option value="doctoral">دکتری</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="description" class="control-label col-sm-2">توضیحات</label>
+                        <div class="col-sm-10">
+                            <textarea name="description" id="description" placeholder="توضیحات"
+                                      class="form-control" rows="10"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-10 col-sm-offset-2">
+                            <button type="submit" class="btn btn-success btn-sm btn-block pull-left">
+                                <span class="glyphicon glyphicon-save"></span>
+                                ذخیره
+                            </button>
+                            <!--<input class="btn btn-success btn-sm btn-block pull-left"
+                                   type="submit" value="ثبت" />-->
+                            <input class="btn btn-default btn-sm btn-block pull-left"
+                                   type="reset" value="پاک کردن فرم" />
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        console.log('from body tag');
+    </script>
+    <script src="Scripts/register.js"></script>
+</body>
+</html>
