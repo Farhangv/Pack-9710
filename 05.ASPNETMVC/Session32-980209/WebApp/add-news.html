@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/bootstrap-rtl.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme-rtl.css" rel="stylesheet" />
+    <link href="Content/Styles.css" rel="stylesheet" />
+    <style>
+        #main-content {
+            margin-top: 80px;
+        }
+        header{
+            margin-top:15px;
+        }
+        .news{
+            border:1px solid #bbb;
+            margin:15px;
+            text-align:justify;
+            padding:10px;
+            border-radius:5px;
+        }
+
+        #ajax-loader{
+            width: 100vw;
+            height:100vh;
+            background-color: rgba(128, 128, 128,0.5);
+            position:fixed;
+            top:0;
+            left:0;
+            z-index:99999;
+        }
+        #ajax-loader img{
+            width:200px;
+            margin-left:auto;
+            margin-right:auto;
+            display:block;
+            margin-top:48vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="ajax-loader" style="display:none;">
+        <img src="images/ajax-loader.gif" />
+    </div>
+    <header class="container-fluid">
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">کهکشان</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="/Home.html">
+                            <span class="glyphicon glyphicon-home"></span>
+                        </a>
+                    </li>
+                    <li><a href="#">محصولات</a></li>
+                    <li><a href="/Register.html" target="_blank">ثبت نام دوره</a></li>
+                    <li><a href="#">درباره ما</a></li>
+                    <li><a href="#">درباره ما</a></li>
+                    <li><a href="#">تماس با ما</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="#">جان دو</a></li>
+                    <li>
+                        <a href="#" title="خروج">
+                            <span class="glyphicon glyphicon-log-out"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container" id="main-content">
+        <div class="row">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label for="title" class="control-label col-sm-2">عنوان</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="title" name="title" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="subtitle" class="control-label col-sm-2">زیر عنوان</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="subtitle" name="subtitle" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="content" class="control-label col-sm-2">محتوا</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" id="content" name="content" rows="10"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-10 col-sm-offset-2">
+                        <button id="submit"
+                                class="btn btn-success btn-sm pull-left" type="button">
+                            ثبت خبر
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="Scripts/jquery-2.2.4.js"></script>
+    <script src="Scripts/bootstrap-rtl.js"></script>
+    <script src="Scripts/add-news.js"></script>
+</body>
+</html>
