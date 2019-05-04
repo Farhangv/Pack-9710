@@ -1,0 +1,62 @@
+﻿@model ICollection<MVCDemo.Models.Product>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <style>
+        .container:first-child{
+            margin-top:60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form style="margin-bottom:15px;">
+            <div class="row">
+                <div class="col-md-10">
+                    <input name="search" id="search" class="form-control" placeholder="Search..." />
+                </div>
+                <div class="col-md-2">
+                    <input type="submit" id="submit" class="btn btn-success btn-block" value="Search" />
+                </div>
+            </div>
+        </form>
+
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-hover table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Product ID</th>
+                            <th>Name</th>
+                            <th>Color</th>
+                            <th>List Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var product in Model)
+                        {
+                            <tr>
+                                <td>@product.ProductID</td>
+                                <td>@product.Name</td>
+                                <td>
+                                    <span style="background-color: @product.Color; display:inline-block; margin:4px; width:15px; height:15px; border-radius: 3px;"></span>
+                                    @product.Color
+                                </td>
+                                <td>@product.ListPrice.ToString("C")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
