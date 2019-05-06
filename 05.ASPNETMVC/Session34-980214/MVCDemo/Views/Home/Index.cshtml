@@ -1,0 +1,38 @@
+﻿@using MVCDemo.Models
+@model Person
+@{
+    Layout = null;
+    //var name = "John";
+    //var name = ViewData["Name"].ToString();
+    //var family = "Doe";
+    //var family = ViewBag.Family.ToString();
+
+    //var name = ((MVCDemo.Models.Person)ViewBag.PersonData).Name;
+    //var family = ((MVCDemo.Models.Person)ViewBag.PersonData).Family;
+
+    //var courses = new List<string>() { "C#", "Java", "PHP", "Python" };
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <h2>Hello @Model.Name  @Model.Family</h2>
+        <h3>Your Courses Count is: @Model.Courses.Count</h3>
+        <ol>
+            @foreach (var course in Model.Courses)
+            {
+                if (course.Title != "PHP")
+                {
+                    <li>@course</li>
+                }
+            }
+        </ol>
+    </div>
+</body>
+</html>
