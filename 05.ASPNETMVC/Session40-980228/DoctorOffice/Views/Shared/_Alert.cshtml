@@ -1,0 +1,5 @@
+﻿@model DoctorOffice.ViewModels.AlertViewModel
+
+<div class="col-md-12 alert alert-@(string.IsNullOrEmpty(Model.Class) ? "success" : Model.Class)">
+    @Model.Message
+</div>
